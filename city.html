@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veyrun District Selector</title>
+
+<style>
+    body{
+        margin:0;
+        font-family:Georgia, serif;
+        background:#111;
+        color:#f1e7d0;
+        overflow-x:hidden;
+    }
+
+    .container{
+        max-width:1200px;
+        margin:auto;
+        padding:40px;
+    }
+
+    h1{
+        text-align:center;
+        font-size:48px;
+        margin-bottom:10px;
+        letter-spacing:2px;
+    }
+
+    .subtitle{
+        text-align:center;
+        color:#c4b28a;
+        margin-bottom:50px;
+        font-style:italic;
+    }
+
+    .districts{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+        gap:20px;
+        margin-bottom:40px;
+    }
+
+    .card{
+        background:#1b1b1b;
+        border:1px solid #3d3525;
+        padding:25px;
+        cursor:pointer;
+        transition:0.3s;
+        border-radius:12px;
+    }
+
+    .card:hover{
+        transform:translateY(-5px);
+        background:#252525;
+        border-color:#8f6b2f;
+    }
+
+    .card h2{
+        margin-top:0;
+        color:#d6b36a;
+    }
+
+    .display{
+        background:#181818;
+        border:1px solid #3b3b3b;
+        padding:35px;
+        border-radius:15px;
+        min-height:300px;
+        animation:fade 0.4s ease;
+    }
+
+    .display h2{
+        color:#d6b36a;
+        font-size:36px;
+        margin-top:0;
+    }
+
+    .display p{
+        line-height:1.8;
+        font-size:18px;
+        color:#ddd;
+    }
+
+    .quote{
+        margin-top:20px;
+        padding-left:20px;
+        border-left:3px solid #8f6b2f;
+        color:#c9b58b;
+        font-style:italic;
+    }
+
+    @keyframes fade{
+        from{
+            opacity:0;
+            transform:translateY(10px);
+        }
+        to{
+            opacity:1;
+            transform:translateY(0);
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>City of Veyrun</h1>
+    <div class="subtitle">
+        Choose a district to reveal its description
+    </div>
+
+    <div class="districts">
+
+        <div class="card" onclick="showDistrict('docks')">
+            <h2>The Docks</h2>
+            <p>Poverty, sailors, gangs, and river trade.</p>
+        </div>
+
+        <div class="card" onclick="showDistrict('market')">
+            <h2>Market Square</h2>
+            <p>The loud heart of the city filled with merchants.</p>
+        </div>
+
+        <div class="card" onclick="showDistrict('noble')">
+            <h2>The Noble Heights</h2>
+            <p>Luxury, politics, and hidden fear.</p>
+        </div>
+
+        <div class="card" onclick="showDistrict('underways')">
+            <h2>The Underways</h2>
+            <p>Ancient tunnels beneath the city.</p>
+        </div>
+
+    </div>
+
+    <div class="display" id="displayBox">
+
+        <h2>Welcome to Veyrun</h2>
+
+        <p>
+            Select one of the districts above to reveal its full description.
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+
+const districts = {
+
+    docks: `
+        <h2>The Docks</h2>
+
+        <p>
+        The poorest and busiest part of the city.
+        </p>
+
+        <p>
+        Cargo ships arrive daily from distant kingdoms carrying silk,
+        weapons, exotic creatures, and sometimes illegal goods hidden
+        below deck.
+        </p>
+
+        <p>
+        Sailors drink away fortunes while gangs fight over territory
+        in the shadows between warehouses and taverns.
+        </p>
+
+        <div class="quote">
+        “This is where rumors spread first... and where bodies float last.”
+        </div>
+    `,
+
+    market: `
+        <h2>Market Square</h2>
+
+        <p>
+        A massive open plaza at the heart of Veyrun.
+        </p>
+
+        <p>
+        Street performers, fortune tellers, thieves, merchants,
+        and wandering adventurers gather here every day.
+        </p>
+
+        <p>
+        The square never truly falls silent. Even at midnight,
+        voices echo between stone buildings beneath lantern light.
+        </p>
+
+        <div class="quote">
+        “If it exists, someone in the market can sell it.”
+        </div>
+    `,
+
+    noble: `
+        <h2>The Noble Heights</h2>
+
+        <p>
+        Built on the upper cliffs overlooking the city.
+        </p>
+
+        <p>
+        Large estates, marble halls, private guards,
+        and political schemes dominate this district.
+        </p>
+
+        <p>
+        The rich pretend the lower city doesn’t exist.
+        Banquets continue behind golden doors while
+        the streets below drown in poverty and fear.
+        </p>
+
+        <p>
+        But lately, nobles have begun hiring mercenaries in secret.
+        Carriages move through the district at strange hours,
+        and servants whisper about disappearances inside noble estates.
+        </p>
+
+        <div class="quote">
+        “They are afraid of something.”
+        </div>
+    `,
+
+    underways: `
+        <h2>The Underways</h2>
+
+        <p>
+        Beneath the city lies a maze of tunnels older than Veyrun itself.
+        </p>
+
+        <p>
+        Smugglers use them. Cultists hide there.
+        Some say entire forgotten sections of the ancient empire
+        still remain untouched underground.
+        </p>
+
+        <p>
+        People who enter the deepest tunnels sometimes return...
+        different.
+        </p>
+
+        <div class="quote">
+        “Most never return at all.”
+        </div>
+    `
+};
+
+function showDistrict(district){
+    document.getElementById("displayBox").innerHTML = districts[district];
+}
+
+</script>
+
+</body>
+</html>

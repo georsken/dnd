@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="el">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Veyrun District Selector</title>
+<title>Η Πόλη του Veyrun</title>
 
 <style>
     body{
@@ -61,12 +61,16 @@
         color:#d6b36a;
     }
 
+    .card p{
+        color:#ccc;
+    }
+
     .display{
         background:#181818;
         border:1px solid #3b3b3b;
         padding:35px;
         border-radius:15px;
-        min-height:300px;
+        min-height:400px;
         animation:fade 0.4s ease;
     }
 
@@ -80,6 +84,11 @@
         line-height:1.8;
         font-size:18px;
         color:#ddd;
+    }
+
+    .display h3{
+        color:#c9a75c;
+        margin-top:30px;
     }
 
     .quote{
@@ -106,41 +115,67 @@
 
 <div class="container">
 
-    <h1>City of Veyrun</h1>
+    <h1>Η Πόλη του Veyrun</h1>
+
     <div class="subtitle">
-        Choose a district to reveal its description
+        Επίλεξε μια περιοχή της πόλης για να εμφανιστεί η περιγραφή της
     </div>
 
     <div class="districts">
 
         <div class="card" onclick="showDistrict('docks')">
-            <h2>The Docks</h2>
-            <p>Poverty, sailors, gangs, and river trade.</p>
+            <h2>Οι Αποβάθρες</h2>
+            <p>Φτώχεια, ναύτες, συμμορίες και εμπόριο.</p>
         </div>
 
         <div class="card" onclick="showDistrict('market')">
-            <h2>Market Square</h2>
-            <p>The loud heart of the city filled with merchants.</p>
+            <h2>Η Κεντρική Αγορά</h2>
+            <p>Το θορυβώδες κέντρο της πόλης.</p>
         </div>
 
         <div class="card" onclick="showDistrict('noble')">
-            <h2>The Noble Heights</h2>
-            <p>Luxury, politics, and hidden fear.</p>
+            <h2>Τα Ευγενικά Ύψη</h2>
+            <p>Πλούτος, πολιτική και κρυμμένος φόβος.</p>
         </div>
 
         <div class="card" onclick="showDistrict('underways')">
-            <h2>The Underways</h2>
-            <p>Ancient tunnels beneath the city.</p>
+            <h2>Οι Υπόγειες Σήραγγες</h2>
+            <p>Αρχαία τούνελ κάτω από την πόλη.</p>
+        </div>
+
+        <div class="card" onclick="showDistrict('gildedcrow')">
+            <h2>The Gilded Crow</h2>
+            <p>Η πιο διάσημη ταβέρνα του λιμανιού.</p>
+        </div>
+
+        <div class="card" onclick="showDistrict('cathedral')">
+            <h2>Ο Καθεδρικός της Αυγής</h2>
+            <p>Θρησκεία, ψίθυροι και μυστικά.</p>
+        </div>
+
+        <div class="card" onclick="showDistrict('blackmarket')">
+            <h2>Η Μαύρη Αγορά</h2>
+            <p>Παράνομα αντικείμενα και επικίνδυνοι άνθρωποι.</p>
+        </div>
+
+        <div class="card" onclick="showDistrict('graveyard')">
+            <h2>Το Νεκροταφείο των Βασιλέων</h2>
+            <p>Ομίχλη, σιωπή και ανήσυχοι νεκροί.</p>
+        </div>
+
+        <div class="card" onclick="showDistrict('academy')">
+            <h2>Η Ακαδημία Αλχημείας</h2>
+            <p>Μάγοι, πειράματα και απαγορευμένη γνώση.</p>
         </div>
 
     </div>
 
     <div class="display" id="displayBox">
 
-        <h2>Welcome to Veyrun</h2>
+        <h2>Καλώς ήρθες στο Veyrun</h2>
 
         <p>
-            Select one of the districts above to reveal its full description.
+            Επίλεξε μία περιοχή της πόλης για να εμφανιστεί η πλήρης περιγραφή της.
         </p>
 
     </div>
@@ -152,99 +187,304 @@
 const districts = {
 
     docks: `
-        <h2>The Docks</h2>
+        <h2>Οι Αποβάθρες</h2>
 
         <p>
-        The poorest and busiest part of the city.
+        Το πιο φτωχό και επικίνδυνο σημείο της πόλης.
         </p>
 
         <p>
-        Cargo ships arrive daily from distant kingdoms carrying silk,
-        weapons, exotic creatures, and sometimes illegal goods hidden
-        below deck.
+        Πλοία φτάνουν καθημερινά μεταφέροντας μετάξια,
+        όπλα, εξωτικά πλάσματα και παράνομα φορτία.
         </p>
 
         <p>
-        Sailors drink away fortunes while gangs fight over territory
-        in the shadows between warehouses and taverns.
+        Οι ναύτες ξοδεύουν τα τελευταία τους νομίσματα
+        σε βρόμικες ταβέρνες ενώ συμμορίες πολεμούν
+        στα στενά ανάμεσα στις αποθήκες.
+        </p>
+
+        <h3>Άτομα που μπορούν να συναντήσουν:</h3>
+
+        <p>
+        <b>Κάπτεν Ρόρικ</b><br>
+        Ψηλός άντρας με ξύλινο πόδι,
+        μαύρο παλτό και ουλές στο πρόσωπο.
+        </p>
+
+        <p>
+        <b>Νίσα η Κλέφτρα</b><br>
+        Μικρόσωμη γυναίκα με κοντά μαύρα μαλλιά
+        και γρήγορα χέρια.
         </p>
 
         <div class="quote">
-        “This is where rumors spread first... and where bodies float last.”
+        “Εδώ τα μυστικά αξίζουν περισσότερο από τον χρυσό.”
         </div>
     `,
 
     market: `
-        <h2>Market Square</h2>
+        <h2>Η Κεντρική Αγορά</h2>
 
         <p>
-        A massive open plaza at the heart of Veyrun.
+        Η καρδιά του Veyrun δεν σταματά ποτέ να κινείται.
         </p>
 
         <p>
-        Street performers, fortune tellers, thieves, merchants,
-        and wandering adventurers gather here every day.
+        Έμποροι φωνάζουν, μουσικοί παίζουν,
+        και τυχοδιώκτες ψάχνουν δουλειές.
         </p>
 
         <p>
-        The square never truly falls silent. Even at midnight,
-        voices echo between stone buildings beneath lantern light.
+        Η μυρωδιά από μπαχαρικά,
+        ιδρώτα και καπνό γεμίζει τον αέρα.
+        </p>
+
+        <h3>Άτομα που μπορούν να συναντήσουν:</h3>
+
+        <p>
+        <b>Έντριν ο Έμπορος</b><br>
+        Χοντρός άντρας με μοβ ρούχα
+        και δεκάδες χρυσά δαχτυλίδια.
+        </p>
+
+        <p>
+        <b>Μίρα η Μάντισσα</b><br>
+        Γυναίκα με λευκά μάτια και ασημένια κοσμήματα.
+        Μιλά σαν να γνωρίζει πράγματα που δεν θα έπρεπε.
         </p>
 
         <div class="quote">
-        “If it exists, someone in the market can sell it.”
+        “Αν υπάρχει κάπου στον κόσμο, μπορείς να το αγοράσεις εδώ.”
         </div>
     `,
 
     noble: `
-        <h2>The Noble Heights</h2>
+        <h2>Τα Ευγενικά Ύψη</h2>
 
         <p>
-        Built on the upper cliffs overlooking the city.
+        Χτισμένη πάνω στους βράχους που κοιτούν όλη την πόλη.
         </p>
 
         <p>
-        Large estates, marble halls, private guards,
-        and political schemes dominate this district.
+        Τεράστιες επαύλεις, μάρμαρο,
+        ιδιωτικοί φρουροί και πολιτικά παιχνίδια.
         </p>
 
         <p>
-        The rich pretend the lower city doesn’t exist.
-        Banquets continue behind golden doors while
-        the streets below drown in poverty and fear.
+        Οι πλούσιοι προσποιούνται πως
+        οι φτωχοί δρόμοι από κάτω δεν υπάρχουν.
         </p>
 
         <p>
-        But lately, nobles have begun hiring mercenaries in secret.
-        Carriages move through the district at strange hours,
-        and servants whisper about disappearances inside noble estates.
+        Όμως τελευταία, άμαξες κινούνται τη νύχτα
+        και οι ευγενείς προσλαμβάνουν μισθοφόρους κρυφά.
+        </p>
+
+        <h3>Άτομα που μπορούν να συναντήσουν:</h3>
+
+        <p>
+        <b>Λόρδος Βαλτέριος</b><br>
+        Ψηλός άντρας με ασημένια γενειάδα,
+        σκούρο μπλε μανδύα και παγωμένο βλέμμα.
+        </p>
+
+        <p>
+        <b>Λαίδη Ελεσάρ</b><br>
+        Όμορφη γυναίκα με χρυσά μαλλιά
+        και κόκκινο φόρεμα.
+        Δεν χαμογελά ποτέ πραγματικά.
         </p>
 
         <div class="quote">
-        “They are afraid of something.”
+        “Κάτι τρομάζει τους ευγενείς.”
         </div>
     `,
 
     underways: `
-        <h2>The Underways</h2>
+        <h2>Οι Υπόγειες Σήραγγες</h2>
 
         <p>
-        Beneath the city lies a maze of tunnels older than Veyrun itself.
+        Ένα ατελείωτο δίκτυο από αρχαία τούνελ
+        κάτω από την πόλη.
         </p>
 
         <p>
-        Smugglers use them. Cultists hide there.
-        Some say entire forgotten sections of the ancient empire
-        still remain untouched underground.
+        Λαθρέμποροι, cultists και χαμένοι ταξιδιώτες
+        εξαφανίζονται εδώ καθημερινά.
         </p>
 
         <p>
-        People who enter the deepest tunnels sometimes return...
-        different.
+        Κάποιοι λένε πως βαθιά κάτω
+        υπάρχουν ακόμα ερείπια της παλιάς αυτοκρατορίας.
+        </p>
+
+        <h3>Άτομα που μπορούν να συναντήσουν:</h3>
+
+        <p>
+        <b>Σκάρ ο Οδηγός</b><br>
+        Λεπτός άντρας με φανάρι και κουκούλα.
+        Γνωρίζει κάθε τούνελ της πόλης.
+        </p>
+
+        <p>
+        <b>Η Σιωπηλή Μορφή</b><br>
+        Μια σκοτεινή φιγούρα που εμφανίζεται μόνο στο βάθος.
+        Κανείς δεν ξέρει αν είναι άνθρωπος.
         </p>
 
         <div class="quote">
-        “Most never return at all.”
+        “Μερικοί επιστρέφουν διαφορετικοί. Οι περισσότεροι όχι.”
+        </div>
+    `,
+
+    gildedcrow: `
+        <h2>The Gilded Crow</h2>
+
+        <p>
+        Η πιο γνωστή ταβέρνα κοντά στις αποβάθρες.
+        </p>
+
+        <p>
+        Γεμάτη μισθοφόρους, ναύτες και ανθρώπους
+        που θέλουν να ξεχάσουν το παρελθόν τους.
+        </p>
+
+        <h3>Άτομα που μπορούν να συναντήσουν:</h3>
+
+        <p>
+        <b>Μπρόγκαρ ο Ταβερνιάρης</b><br>
+        Τεράστιος φαλακρός άντρας με σπασμένη μύτη.
+        </p>
+
+        <p>
+        <b>Σελίνα η Βάρδος</b><br>
+        Κοκκινομάλλα τραγουδίστρια με πράσινα μάτια.
+        </p>
+
+        <div class="quote">
+        “Αν ψάχνεις μπελάδες, θα τους βρεις εδώ.”
+        </div>
+    `,
+
+    cathedral: `
+        <h2>Ο Καθεδρικός της Αυγής</h2>
+
+        <p>
+        Ένας τεράστιος ναός με χρυσούς θόλους
+        και τεράστια βιτρό παράθυρα.
+        </p>
+
+        <p>
+        Οι ιερείς ψιθυρίζουν πως οι θεοί
+        έχουν σταματήσει να απαντούν.
+        </p>
+
+        <h3>Άτομα που μπορούν να συναντήσουν:</h3>
+
+        <p>
+        <b>Πατήρ Μάλθεος</b><br>
+        Ηλικιωμένος ιερέας με λευκά μάτια.
+        </p>
+
+        <p>
+        <b>Αδελφή Ελιρέν</b><br>
+        Νεαρή ιέρεια με ουλές στα χέρια.
+        </p>
+
+        <div class="quote">
+        “Οι προσευχές ακούγονται πλέον άδειες.”
+        </div>
+    `,
+
+    blackmarket: `
+        <h2>Η Μαύρη Αγορά</h2>
+
+        <p>
+        Κρυμμένη κάτω από εγκαταλελειμμένα κτήρια,
+        φωτισμένη μόνο από κόκκινα φανάρια.
+        </p>
+
+        <p>
+        Εδώ μπορείς να αγοράσεις
+        δηλητήρια, μαγεμένα αντικείμενα
+        και απαγορευμένες πληροφορίες.
+        </p>
+
+        <h3>Άτομα που μπορούν να συναντήσουν:</h3>
+
+        <p>
+        <b>Βάρικ</b><br>
+        Χοντρός άντρας με χρυσά δόντια
+        και μόνιμο χαμόγελο.
+        </p>
+
+        <p>
+        <b>Λύρα η Σιωπηλή</b><br>
+        Γυναίκα με ασημένιο μάτι και μαύρη κουκούλα.
+        </p>
+
+        <div class="quote">
+        “Όλα έχουν τιμή.”
+        </div>
+    `,
+
+    graveyard: `
+        <h2>Το Νεκροταφείο των Βασιλέων</h2>
+
+        <p>
+        Ένα αρχαίο νεκροταφείο έξω από την πόλη,
+        καλυμμένο από ομίχλη.
+        </p>
+
+        <p>
+        Οι νεκροθάφτες αρνούνται να εργαστούν τη νύχτα.
+        </p>
+
+        <h3>Άτομα που μπορούν να συναντήσουν:</h3>
+
+        <p>
+        <b>Γκρέβιν</b><br>
+        Νεκροθάφτης με κουρασμένα μάτια και λασπωμένες μπότες.
+        </p>
+
+        <p>
+        <b>Το Κορίτσι με τα Λευκά</b><br>
+        Μια μυστηριώδης μορφή που εμφανίζεται μέσα στην ομίχλη.
+        </p>
+
+        <div class="quote">
+        “Οι νεκροί δεν μένουν ήσυχοι πια.”
+        </div>
+    `,
+
+    academy: `
+        <h2>Η Ακαδημία Αλχημείας</h2>
+
+        <p>
+        Ένας πανύψηλος πύργος γεμάτος καπνό,
+        εργαστήρια και περίεργα σύμβολα.
+        </p>
+
+        <p>
+        Οι μαθητές πιστεύουν πως η μαγεία
+        μπορεί να λύσει τα πάντα.
+        </p>
+
+        <h3>Άτομα που μπορούν να συναντήσουν:</h3>
+
+        <p>
+        <b>Καθηγητής Βέλκορ</b><br>
+        Μάγος με μεταλλικό χέρι και καμένο πρόσωπο.
+        </p>
+
+        <p>
+        <b>Μίρα η Μαθήτρια</b><br>
+        Νεαρή κοπέλα που πειραματίζεται κρυφά τα βράδια.
+        </p>
+
+        <div class="quote">
+        “Η γνώση έχει πάντα τίμημα.”
         </div>
     `
 };
